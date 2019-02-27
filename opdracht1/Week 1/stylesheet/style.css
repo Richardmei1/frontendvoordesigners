@@ -1,0 +1,121 @@
+/* general */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #3e4247;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* header */
+
+header {
+    background-color: #636363;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+header nav ul li:nth-of-type(2) {
+    margin-left: auto;
+}
+
+header {
+    padding: 5px 10px 5px 10px;
+    color: white;
+    width: 100%:
+}
+
+header li a span {
+    font-size: 2em;
+    padding-top: 5px;
+}
+
+/* Films overzicht */
+
+h2 {
+    padding-left: 10px;
+    padding-top: 10px;
+    color: #ea532d;
+}
+
+section {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: auto auto;
+    padding: 10px;
+}
+
+
+article img {
+    width: 100%;
+
+}
+
+article {
+    padding: 10px;
+    background-color: lightgray;
+    font-size: 0.8em;
+}
+
+article button {
+    display: flex;
+}
+
+article {
+    width: 100%;
+}
+
+/* #like {
+    background-image: url(../images/heart_empty.svg);
+    width: 2em;
+    height: 2em;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+    display: block;
+    margin-bottom: 10px;
+} */
+
+button {
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+}
+
+button:focus {
+    outline: 0;
+}
+
+button span:hover {
+    color: rgba(255, 0, 0, 0.5);
+}
+
+button span {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.fa-heart {
+    color: #ea532d;
+}
