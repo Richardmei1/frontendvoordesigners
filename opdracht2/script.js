@@ -1,3 +1,5 @@
+// Tutorial https://www.youtube.com/watch?v=sQuniQCzNlY
+
 var slider_content = document.getElementById("box");
 
 // images in array
@@ -30,6 +32,7 @@ function prevImage() {
 
 
 // EventListener voor wanneer een knop wordt ingedrukt -> functie checkKeyPress -> false (no return)
+// https://www.youtube.com/watch?v=VBVOXTgXX2U&list=PLcf9ltFhcqhucr-ej-5btRcQs_46EyZiz&index=8&t=41s
 
 window.addEventListener("keydown", checkKeyPress, false);
 
