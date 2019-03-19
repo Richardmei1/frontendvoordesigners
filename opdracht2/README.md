@@ -17,3 +17,6 @@ Ook heb ik een achtergrond toegevoegd aan de buttons, omdat de pijltjes af en to
 Ik kreeg als feedback dat de titel mooier zou zijn in het midden, dus dat heb ik met CSS veranderd.
 Ook kreeg ik te horen dat het misschien handig zou zijn om een tekst toe te voegen over waar het plaatje over gaat of genomen is. Dit lukte voor het eerste plaatje, maar niet voor de rest.
 
+Later heb ik de fotos gewoon bewerkt in Illustrator om hetzelfde effect te creëren.
+
+
