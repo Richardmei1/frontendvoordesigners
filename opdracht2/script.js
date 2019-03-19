@@ -26,7 +26,7 @@ function prevImage() {
     } else {
         i = image.length;
     }
-    slider_content.innerHTML = "<img src=" + image[i - 1] + ".jpeg>";
+    slider_content.innerHTML = "<img src=" + image[i - 1] + ".jpg>";
 }
 
 
