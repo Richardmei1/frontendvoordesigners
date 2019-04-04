@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Best Movies</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Top 6 Best Movies</h1>
+        </header>
+        <button>Films laden</button>
+        <span id="loader">Aan het laden ...</span>
+        <div>
+
+            <button class="prev fas fa-angle-left" onclick="prevArticle()"></button>
+            <div class="container">
+                <!-- hier wordt html geïnjecteerd -->
+                <section class="hideArticles"></section>
+            </div>
+            <button class="next fas fa-angle-right" onclick="nextArticle()"></button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
