@@ -35,17 +35,21 @@ function showData(index) {
 }
 
 
-// functie om reviews te laten zien
+// functions to show reviews
 
 function showReviews() {
     var readReviews = document.createElement('ul');
+    readReviews.id = 'reviewsList'
 
     for (var j = 0; j < currentReviews.length; j++) {
         var listItem = document.createElement('li');
         listItem.textContent = currentReviews[j].score + ' - ' + currentReviews[j].created_at;
         readReviews.appendChild(listItem);
     }
-
+    // if reviews are loaded, disable loading more reviews
+    if (document.getElementById('reviewsList')) {
+        removeReview();
+    }
     document.getElementById('movie').appendChild(readReviews);
 }
 
@@ -100,14 +104,14 @@ function nextMovie() {
 
 // Removes current movie from document
 function removeData() {
-    var current = document.getElementById('movie');
-    current.parentNode.removeChild(current);
+    var currentMovie = document.getElementById('movie');
+    currentMovie.parentNode.removeChild(currentMovie);
 }
 
-/* function removeReview() {
-    var listReviews =document.getElementsByTagName('ul');
-    listReviews.parentNode.removeChild('ul')
-} */
+function removeReview() {
+    var currentReview = document.getElementById('reviewsList');
+    currentReview.parentNode.removeChild(currentReview);
+}
 
 // EventListener for when a key gets pressed -> function checkKeyPress -> false (no return)
 window.addEventListener("keydown", checkKeypress, false);
