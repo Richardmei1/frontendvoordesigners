@@ -34,6 +34,9 @@ function showData(index) {
     section.appendChild(movieArticle);
 }
 
+
+// functie om reviews te laten zien
+
 function showReviews() {
     var readReviews = document.createElement('ul');
 
@@ -45,6 +48,8 @@ function showReviews() {
 
     document.getElementById('movie').appendChild(readReviews);
 }
+
+
 
 function loadImages() {
     var request = new XMLHttpRequest();
@@ -97,4 +102,24 @@ function nextMovie() {
 function removeData() {
     var current = document.getElementById('movie');
     current.parentNode.removeChild(current);
+}
+
+/* function removeReview() {
+    var listReviews =document.getElementsByTagName('ul');
+    listReviews.parentNode.removeChild('ul')
+} */
+
+// EventListener for when a key gets pressed -> function checkKeyPress -> false (no return)
+window.addEventListener("keydown", checkKeypress, false);
+
+// functie for left & right button and review button
+
+function checkKeypress(key) {
+    if (key.keyCode == "37") {
+        prevMovie();
+    } else if (key.keyCode == "39") {
+        nextMovie();
+    } else if (key.keyCode == "32") {
+        showReviews();
+    }
 }
