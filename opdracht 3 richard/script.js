@@ -1,119 +1,100 @@
 var requestUrl = "https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json";
 
 var section = document.querySelector("section");
-var button = document.querySelector("button");
-var loaderElement = document.querySelector("span");
+var movies = [];
+var index = 0;
+var currentReviews = [];
 
-console.log("LoaderElement", loaderElement);
+// On load, load images from url
+window.onload = loadImages();
 
+// Displays movie at index
+function showData(index) {
+    // Get current movie to display
+    var movie = movies[index];
 
+    var movieArticle = document.createElement('article');
 
-function showData(jsonObj) {
-    var films = jsonObj;
-    console.log("showData films", films);
+    var movieTitle = document.createElement('h2');
+    movieTitle.textContent = movie.title;
 
-    for (var i = 0; i < films.length; i++) {
-        console.log("film " + i);
-        var filmpiekijken = document.createElement('article');
+    var moviePlot = document.createElement('p');
+    moviePlot.textContent = movie.simple_plot;
 
-        var filmtitel = document.createElement('h2');
-        filmtitel.textContent = films[i].title;
-        var filmplot = document.createElement('p');
-        filmplot.textContent = films[i].simple_plot;
-        var filmcover = document.createElement('img');
-        filmcover.src = films[i].cover;
-        //myImg.textContent = films[i].cover;
-        console.log(filmcover.src);
+    var movieCover = document.createElement('img');
+    movieCover.src = movie.cover;
 
-        var reviewslezen = document.createElement('ul');
-        var reviews = films[i].reviews;
-        for (var j = 0; j < reviews.length; j++) {
-            var listItem = document.createElement('li');
-            listItem.textContent = reviews[j].score + ' - ' + reviews[j].created_at;
-            reviewslezen.appendChild(listItem);
-        }
+    currentReviews = movie.reviews;
 
-        filmpiekijken.appendChild(filmtitel);
-        filmpiekijken.appendChild(filmplot);
-        filmpiekijken.appendChild(filmcover);
-        filmpiekijken.appendChild(reviewslezen);
-        section.appendChild(filmpiekijken);
-    }
+    movieArticle.appendChild(movieTitle);
+    movieArticle.appendChild(moviePlot);
+    movieArticle.appendChild(movieCover);
+    movieArticle.id = 'movie';
+
+    section.appendChild(movieArticle);
 }
 
-function loadimagesmetXHR() {
+function showReviews() {
+    var readReviews = document.createElement('ul');
+
+    for (var j = 0; j < currentReviews.length; j++) {
+        var listItem = document.createElement('li');
+        listItem.textContent = currentReviews[j].score + ' - ' + currentReviews[j].created_at;
+        readReviews.appendChild(listItem);
+    }
+
+    document.getElementById('movie').appendChild(readReviews);
+}
+
+function loadImages() {
     var request = new XMLHttpRequest();
+
     request.open('get', requestUrl);
     request.responseType = 'json';
-    //request.responseType = 'text'; // now we're getting a string!
     request.send();
-
     request.addEventListener("load", function () {
-        //console.log("request load: ",request.response);
-        loaderElement.classList.remove('show');
-        showData(request.response);
+        movies = request.response;
+        showData(index);
+
     });
-    //  request.onload = function() {
-    //      console.log("request.onload: ",request.response);
-    //    }
-    request.timeout = 10000; // time in milliseconds
+
+    request.timeout = 10000;
     request.ontimeout = function (e) {
-        // XMLHttpRequest timed out. Do something here.
         console.log("ontimeout: " + request.timeout + ", het laden duurt te lang !", e);
     };
     request.onerror = function () {
         console.log('Fetch Error', request.status);
     };
 }
-//loadimagesmetXHR();
 
-//actie
-button.onclick = function () {
-    loaderElement.classList.add('show');
-    this.classList.add('hide');
+// Buttons previous & next
 
-    loadimagesmetXHR();
-};
+// Updates index to previous index, removes old movie, then adds previous movie to document
+function prevMovie() {
+    if (index === 0) {
+        index = movies.length - 1;
+    } else {
+        index--;
+    }
 
-
-
-
-
-
-function loadRestApiFetch() { //Rest Api call met Fetchs
-    console.log("function loadRestApiFetch");
-
-    loaderElement.classList.add('show');
-    fetch(requestUrl)
-        .then(function (response) {
-            console.log(response.headers.get('Content-Type'));
-            console.log(response.headers.get('Date'));
-
-            console.log(response.status);
-            console.log(response.statusText);
-            console.log(response.type);
-            console.log(response.url);
-
-            return response.json();
-        })
-        .then(function (myJson) {
-            console.log('Request successful', myJson);
-            //eerst de loader weg halen !
-            loaderElement.classList.remove('show');
-            //dan de html renderen
-            //document.querySelector("p").innerHTML="joehoe";
-            //console.log(myJson);
-        })
-        .catch(function (error) {
-            console.log('Request failed', error)
-        });
+    removeData();
+    showData(index);
 }
-//loadRestApiFetch();
 
-const articles = document.querySelectorAll("article");
+// Updates index to next index, removes old movie, then adds next movie to document
+function nextMovie() {
+    if (index === movies.length - 1) {
+        index = 0;
+    } else {
+        index++;
+    }
 
-var i = articles.length;
+    removeData();
+    showData(index);
+}
 
-function nextArticle() {
-
+// Removes current movie from document
+function removeData() {
+    var current = document.getElementById('movie');
+    current.parentNode.removeChild(current);
 }

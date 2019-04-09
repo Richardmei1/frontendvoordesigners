@@ -14,16 +14,14 @@
         <header>
             <h1>Top 6 Best Movies</h1>
         </header>
-        <button>Films laden</button>
-        <span id="loader">Aan het laden ...</span>
         <div>
-
-            <button class="prev fas fa-angle-left" onclick="prevArticle()"></button>
+            <button class="prev fas fa-angle-left" onclick="prevMovie()"></button>
             <div class="container">
                 <!-- hier wordt html geïnjecteerd -->
-                <section class="hideArticles"></section>
+                <section></section>
             </div>
-            <button class="next fas fa-angle-right" onclick="nextArticle()"></button>
+            <button class="next fas fa-angle-right" onclick="nextMovie()"></button>
+            <button id="reviews" onclick="showReviews()">SHOW REVIEWS</button>
         </div>
     </main>
     <script src="script.js"></script>

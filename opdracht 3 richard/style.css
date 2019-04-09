@@ -6,6 +6,7 @@ body {
 
 h1 {
     text-align: center;
+    font-style: italic;
 }
 
 button {
@@ -21,31 +22,26 @@ button {
 article {
     margin: auto;
     width: 400px;
+
 }
 
 article h2 {
     text-align: center;
+    color: orange;
+    margin-bottom: 0;
+}
+
+article p {
+    margin-top: 0;
 }
 
 article img {
     width: 300px;
-    margin-left: 40px
+    margin-left: 50px;
 }
 
 article {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-}
-
-/* article {
-    visibility: hidden;
-}
-
-article:nth-of-type(1) {
-    visibility: visible;
+    position: relative;
 }
 
 
@@ -58,34 +54,40 @@ button {
     color: white;
 }
 
-div button {
+.prev,
+.next {
     padding: 20px;
     border: none;
     background: #37f;
     font-size: 30px;
     color: white;
-    position: absolute;
-    top: 50%;
+    top: 400px;
     outline-style: none;
     width: 100px;
-}
-
-.next {
     border-radius: 10px;
-    margin-left: 650px;
 }
 
 .prev {
+    position: absolute;
+    left: 10%;
+}
+
+.next {
+    position: absolute;
+    right: 10%;
+}
+
+/* Reviews button */
+
+#reviews {
+    width: 150px;
+    padding: 5px;
+    top: 750px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    background-color: orange;
     border-radius: 10px;
-    margin-left: 130px;
-}
-
-/* section */
-
-.hideArticles {
-    visibility: hidden;
-}
-
-.hideArticles article:nth-of-type(1) {
-    visibility: visible;
+    margin-top: 10px;
+    font-family: 'Oswald', sans-serif;
 }
