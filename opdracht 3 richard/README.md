@@ -2,7 +2,7 @@
 
 Voor de eindopdracht heb ik gekozen om gebruik te maken van  de film database. Ik heb een carousel gemaakt voor de Top 6  beste films. Bij deze films zijn de titels, beschrijvingen, covers en reviews te zien.
 
-![iPad](/ipad.jpeg)
+![iPad](https://github.com/Richardmei1/frontendvoordesigners/blob/master/opdracht%203%20richard/ipad.jpg)
 
 De gebruiker kan door de carousel heen kan navigeren d.m.v. de pijltjes. Deze pijltjes kan de gebruiker bedienen met zowel z'n muis als z'n toetsenbord's linker- en rechter pijltoetsen.
 
