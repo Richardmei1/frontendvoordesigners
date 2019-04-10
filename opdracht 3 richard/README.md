@@ -1,4 +1,4 @@
-# frontend voor designers
+# Frontend voor designers
 
 Voor de eindopdracht heb ik gekozen om gebruik te maken van  de film database. Ik heb een carousel gemaakt voor de Top 6  beste films. Bij deze films zijn de titels, beschrijvingen, covers en reviews te zien.
 
