@@ -40,17 +40,18 @@ function showData(index) {
 function showReviews() {
     var readReviews = document.createElement('ul');
     readReviews.id = 'reviewsList'
-
-    for (var j = 0; j < currentReviews.length; j++) {
-        var listItem = document.createElement('li');
-        listItem.textContent = currentReviews[j].score + ' - ' + currentReviews[j].created_at;
-        readReviews.appendChild(listItem);
-    }
     // if reviews are loaded, disable loading more reviews
     if (document.getElementById('reviewsList')) {
         removeReview();
+    } else {
+        for (var j = 0; j < currentReviews.length; j++) {
+            var listItem = document.createElement('li');
+            listItem.textContent = currentReviews[j].score + ' - ' + currentReviews[j].created_at;
+            readReviews.appendChild(listItem);
+
+            document.getElementById('movie').appendChild(readReviews);
+        }
     }
-    document.getElementById('movie').appendChild(readReviews);
 }
 
 
