@@ -11,13 +11,13 @@ Ook kan de gebruikers de reviews zien van de films. De gebruiker kan de reviews 
 -------------------------------
 # Toepassing principes user interface design
 
-4. Keep users in control
+### 4. Keep users in control
 De gebruiker heeft complete controle van de applicatie. Door de pijltjes kan hij navigeren door de films en door op de reviews knop te klikken kan hij de films showen/hiden.
 
-9. Appearance follows behavior
+### 9. Appearance follows behavior
 Er zijn drie knoppen. Twee pijl knoppen en één reviews knop. De knoppen doen wat de gebruiker verwacht, met pijltjes navigatie. En met de reviews knop verwacht de gebruiker de reviews te zien.
 
-11. Strong visual hierarchies work best
+### 11. Strong visual hierarchies work best
 Bovenaan staat de algemene titel groot en schuingedrukt. Wanneer de gebruiker weet dat deze altijd bovenaan staat en niet verandert, zal de gebruiker focussen op de knoppen, titel en afbeelding.
 
 De knoppen hebben een sterk hiërarchie doordat ze groot zijn en een opvallende kleur hebben. De pijlen zijn visueel sterker dan de reviews knop doordat deze groter is.
